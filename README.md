@@ -46,7 +46,16 @@ All packages sources are available as Source RPMs in [published repository](http
 
 
 ## 0.4.20.0-2 Public Release notes 
+This is the first public overlay release to support Intel EagleStream / Sapphire Rapids Platform. 
 
+If deploying Intel:registered: Data Streaming Accelerator with this prototype code, use the following: 
+Driver_name attribute is added in kernel. It could be configured as crypto, dmaengine, mdev and user. Take user for example, if use config file add "driver_name":"user" in wq config. If use accel-config config-wq, add -d “user” or –driver-name=“user”. If use sysfs, please add echo or printf like echo "user" > /sys/bus/dsa/devices/dsa0/wq0.0/driver_name.
+
+If deploying Intel:registered: Trusted Domain Extensions feature with this prototype code, use the following:
+1. “tdx_host=on” must be appended to host kernel command line parameter, otherwise, TDX will not be initialized 
+2. TD guest cannot launch, qemu error “qemu-kvm: KVM_TDX_INIT_VM failed: Operation not supported” - Disable CET and Arch LBR with adding " -arch-lbr,-shstk " to qemu parameter to create TDs (Arch LBR is not supported in TD, and CET has not been fully tested in TD, so suggest disable them before TD guest launch) 
+3. A ‘tdx_disable_filter’ entry has been added to the kernel command line 
+4. Disable NUMA balancing in host, "echo 0 > /proc/sys/kernel/numa_balancing". 
 ...
 
 ---
