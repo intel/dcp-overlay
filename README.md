@@ -52,24 +52,7 @@ This is the first public overlay release to support Intel EagleStream / Sapphire
 
 If deploying Intel:registered: Data Streaming Accelerator with this prototype code, use the following:
 
-For accel-config tool, use -d or --driver-name to config it.
-
-User example:
-```
-accel-config config-wq --group-id=0 --mode=dedicated --type=user --name="app1" --driver-name="user" --priority=10 dsa0/wq0.0
-accel-config config-engine dsa0/engine0.0 --group-id=0
-```
-Kernel example:
-```accel-config config-wq --group-id=0 --mode=dedicated --wq-size=16 --type=kernel --name="dma0chan0" --driver-name=dmaengine --priority=10 dsa0/wq0.0
-accel-config config-engine dsa0/engine0.0 --group-id=0
-```
-
-For sysfs interface, need to use echo or printf to set driver_name. The test scripts should add below:
-
-User: ``echo "user" > /sys/bus/dsa/devices/dsa0/wq0.0/driver_name``
-
-Kernel: ``echo "dmaengine" > /sys/bus/dsa/devices/dsa0/wq0.0/driver_name``
-
+Driver_name attribute for wq: It can be configured from the following list: crypto, dmaengine, mdev and user. Take user for example, if use config file add ``driver_name:user`` in work queue configuration. If use ``accel-config config-wq``, add ``-d user`` or ``–driver-name=user`` 
 
 If deploying Intel:registered: Trusted Domain Extensions (Intel:registered: TDX) feature with this prototype code, use the following:
 1. “tdx_host=on” must be appended to host kernel command line parameter, otherwise Intel:registered: TDX will not be initialized 
