@@ -47,7 +47,7 @@ All packages sources are available as Source RPMs in [published repository](http
 
 
 ## Release notes 
-### 0.4.20.0-2 
+### 0.4.20-1.1 
 This is the first public overlay release to support Intel EagleStream / Sapphire Rapids Platform. 
 
 If deploying Intel:registered: Data Streaming Accelerator with this prototype code, use the following:
