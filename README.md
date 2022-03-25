@@ -27,6 +27,11 @@ Install the set of overlay packages:
 sudo dnf groupinstall dcp-overlay
 ```
 
+Remove the existing ``rpcgen`` package if installed due to a possible conflict:
+```
+sudo dnf remove rpcgen
+```
+
 Update to the latest releases:
 ```
 sudo dnf update --allowerasing
