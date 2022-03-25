@@ -14,14 +14,33 @@ As the Data Center Platform Overlay targets Eagle Stream / Sapphire Rapids platf
 
 ## Install 
 
- 
+Add the "Intel:registered: Data Center Platform Overlay for Linux* OS" repository to your distribution.
 
-Download and execute the following script to configure the Data Center Platform Overlay repository in the system: 
-## DNF Repository
+Download and add the repository file to the operating system:
+```
+curl -O https://download.01.org//dcp-overlay/Intel-DCP-Overlay.repo 
+sudo mv Intel-DCP-Overlay.repo /etc/yum.repos.d/Cancel changes
+```
 
-https://download.01.org/dcp-overlay
+Install the set of overlay packages:
+```
+sudo dnf groupinstall dcp-overlay
+```
 
-## 0.4.17 Public Release notes 
+Update to the latest releases:
+```
+sudo dnf update --allowerasing
+```
+Note: ``--allowerasing`` is required to resolve a minor conflict the the provided ``glibc`` package.
+
+## Linux Kernel Full Sources Repository
+
+The full Linux Kernel source are availble at https://github.com/intel/linux-kernel-dcp
+
+All packages sources are available as Source RPMs in [published repository](https://download.01.org/dcp-overlay/repo).
+
+
+## 0.4.20.0-2 Public Release notes 
 
 ...
 
