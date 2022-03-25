@@ -42,7 +42,7 @@ Note: ``--allowerasing`` is required to resolve a minor conflict the the provide
 
 The full Linux Kernel source are availble at https://github.com/intel/linux-kernel-dcp
 
-All packages sources are available as Source RPMs in [published repository](https://download.01.org/dcp-overlay/repo).
+All packages sources are available as Source RPMs in [published repository](https://download.01.org/dcp-overlay/repo/src).
 
 
 ## 0.4.20.0-2 Public Release notes 
