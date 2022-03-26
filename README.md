@@ -38,6 +38,13 @@ sudo dnf groupinstall dcp-overlay --allowerasing
 ```
 Note: ``--allowerasing`` is required to resolve a minor conflict with the provided ``glibc`` package.
 
+Force install the overlay versions of these packages:
+```
+sudo dnf install libvirt-7.10.0-2021.12.08.3.el8
+sudo dnf install ipmctl-v03.00.00.0427-1.el8.1
+```
+Note: This step will be removed in later releases.
+
 ## Linux Kernel Full Sources Repository
 
 The full Linux Kernel source is available at https://github.com/intel/linux-kernel-dcp
