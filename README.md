@@ -20,12 +20,11 @@ Add the "Intel:registered: Data Center Platform Overlay for Linux* OS" repositor
 Download and add the repository file to the operating system:
 ```
 curl -O https://download.01.org//dcp-overlay/Intel-DCP-Overlay.repo 
-sudo mv Intel-DCP-Overlay.repo /etc/yum.repos.d/Cancel changes
+sudo mv Intel-DCP-Overlay.repo /etc/yum.repos.d/
 ```
-
-Install the set of overlay packages:
+Note: If you are not using the above .repo file, be sure to set this repo to the highest priority.
 ```
-sudo dnf groupinstall dcp-overlay
+sudo dnf config-manager --save --setopt="dcp-overlay*.priority=1"
 ```
 
 Remove the existing ``rpcgen`` package if installed due to a possible conflict:
@@ -33,9 +32,9 @@ Remove the existing ``rpcgen`` package if installed due to a possible conflict:
 sudo dnf remove rpcgen
 ```
 
-Update to the latest releases:
+Install the set of overlay packages:
 ```
-sudo dnf update --allowerasing
+sudo dnf groupinstall dcp-overlay --allowerasing
 ```
 Note: ``--allowerasing`` is required to resolve a minor conflict the the provided ``glibc`` package.
 
