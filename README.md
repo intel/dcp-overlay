@@ -49,6 +49,12 @@ Note: This step will be removed in later releases.
 
 The full Linux Kernel source is available at https://github.com/intel/linux-kernel-dcp
 
+## QEMU Full Sources Repository
+
+The full QEMU source is available at https://github.com/intel/qemu-dcp
+
+## Source RPMs
+
 All packages sources are available as Source RPMs in [published repository](https://download.01.org/dcp-overlay/repo/src).
 
 
