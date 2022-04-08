@@ -13,13 +13,13 @@ Use github issues for questions: https://github.com/intel/dcp-overlay/issues
 The system under test should have a fully working CentOS Stream 8 installation.
 As the Data Center Platform Overlay targets Eagle Stream / Sapphire Rapids platforms, this should be the underlying hardware to fully support all the included features.
 
-## Install 
+## Install
 
 Add the "Intel:registered: Data Center Platform Overlay for Linux* OS" repository to your distribution.
 
 Download and add the repository file to the operating system:
 ```
-curl -O https://download.01.org//dcp-overlay/Intel-DCP-Overlay.repo 
+curl -O https://download.01.org/dcp-overlay/Intel-DCP-Overlay.repo
 sudo mv Intel-DCP-Overlay.repo /etc/yum.repos.d/
 ```
 Note: Be sure to set this repo to the highest priority.
@@ -59,6 +59,25 @@ All packages sources are available as Source RPMs in [published repository](http
 
 
 ## Release notes
+### 0.5.3-0.1
+
+Updated packages:
+- glibc-2.28-206.0.el8
+- kernel-spr-bkc-pc-5.3-0.el8
+- mcelog-180-5.el8
+
+Minor kernel fixes for the following:
+- IDXD Driver Bug Fixes
+- TDX guest and host Bug Fixes
+- CVE fixes
+
+#### Upgrade Procedure
+```
+sudo dnf update
+```
+
+Note: If installing for the first time, instead follow the [Install directions](#install)
+
 ### 0.4.20-1.1
 This is the first public overlay release to support Intel EagleStream / Sapphire Rapids Platform.
 
