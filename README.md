@@ -32,6 +32,11 @@ Remove the existing ``rpcgen`` package if installed due to a possible conflict:
 sudo dnf remove rpcgen
 ```
 
+Update the repos and accept the new key:
+```
+sudo dnf update
+```
+
 Install the set of overlay packages:
 ```
 sudo dnf groupinstall dcp-overlay --allowerasing
@@ -59,6 +64,33 @@ All packages sources are available as Source RPMs in [published repository](http
 
 
 ## Release notes
+### 0.7.7-4.0
+
+Updated packages:
+- accel-config-3.4.6.4-5
+- kernel-spr-bkc-pc-7.7-4.el8
+- libvirt-8.1.0-2022.04.20.6.el8
+- qemu-kvm-6.1.50-19.spr_bkc_pc_2.3.el8
+- tdvf-2022.ww18.2-1.el8
+
+Removed packages:
+- mcelog : Release 180 now exists in baseos
+
+Minor kernel fixes for the following:
+- DSA/IAX: Bug Fixes
+- TDX/KVM/SGX/IOMMU: Bug Fixes
+- Updated IFS
+- CET: node.js package update, Fix kexec with CET
+- Enable VirtFS for qemu via "--enable-virtfs", so virtio-9p could be used in TD guest for Kata scenarios.
+- CVE fixes
+
+#### Upgrade Procedure
+```
+sudo dnf update
+```
+
+Note: If installing for the first time, instead follow the [Install directions](#install)
+
 ### 0.5.3-0.1
 
 Updated packages:
